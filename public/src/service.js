@@ -3,18 +3,22 @@ import ReadFile from "../../lib/shared/readFile.js"
 export default class Service {
     #dbs
 
+    constructor() {
+        this.#setOptDbs()
+    }
+
     login(e) {
         const formData = new FormData(e.target)
         return formData.getAll('login')
     }
 
-    getDbs() {
+    getOptDbs() {
         return this.#dbs
     }
 
-    setDbs() {
+    #setOptDbs() {
         const readFile = new ReadFile()
-        readFile.open("GET", "../config/dbs.ini_", false)
+        readFile.open("GET", "../config/dbs.ini", false)
         if (readFile.status === 200) {
             this.#dbs = readFile.content.split("\n")
         }
