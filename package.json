@@ -1,0 +1,14 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "Game RPG",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx browser-sync -w"
+  },
+  "author": "edmilson",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.27.11"
+  }
+}

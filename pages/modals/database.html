@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Configuração da Base de Dados</title>
+    <style>
+        #confDb {
+            padding: 20px;
+        }
+
+        #confDb label {
+            color: white;
+            float: left;
+        }
+
+        #confDb input, #formDb select {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="confDb">
+        <form id="formDb" class="form-horizontal" action="#" method="POST">
+            <div class="form-group">
+                <label class="label" for="connectionName">Nome da Conexão: </label>
+                <input class="form-input" type="text" name="connectionName" required/>
+            </div>
+                <input type="hidden" name=connectionName value="<?= ($config->local ?? null) ?>">
+            <div class="form-group">
+                <label class="label" for="type" >Tipo: </label><br>
+                <select class="form-input" name="type" required>
+                    <option value=""></option>
+                    <option value="mysql">mysql</option>
+                    <option value="sqlsrv">sqlsrv</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="label" for="address">Endereço IP/Porta(000.000.000.000,0000): </label>
+                <input class="form-input" type="text" name="address" value="" autocomplete="off" required/>
+            </div>
+            <div class="form-group">
+                <label class="label" for="db">Nome do Banco: </label>
+                <input class="form-input" type="text" name="db" value="" autocomplete="off" required/>
+            </div>
+            <div class="form-group">
+                <label class="label" for="user">Usuário do Banco: </label>
+                <input class="form-input" type="text" name="user" value="" autocomplete="off" required/>
+            </div>
+            <div class="form-group">
+                <label class="label" for="passwd">Senha: </label></br>
+                <input class="form-input" type="password" name="passwd" autocomplete="off" />
+            </div>
+            <!-- <button class='button-style mt-3' style='margin-top: 10px' >Save</button> -->
+        </form>
+    </div>
+</body>
+</html>

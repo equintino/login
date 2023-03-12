@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+        <title>Login</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <style>
+            /** rotation */
+            @keyframes turns {
+                to {
+                    transform: rotate(360deg)
+                }
+            }
+
+            .schedule {
+                animation: turns .8s linear infinite;
+            }
+
+            .login {
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            .login select {
+                width: 57%;
+            }
+
+            .login button {
+                width: 56%;
+                height: 45px;
+                background: rgb(0, 65, 97);
+                color: white;
+                font-size: 1em;
+                font-weight: bolder;
+                border-radius: 5px;
+            }
+
+            .login #box {
+                display: none;
+                width: 800px;
+                margin: 60px auto;
+                position: fixed;
+                height: 500px;
+                background: #575757;
+                z-index: 1;
+                border-radius: 5px;
+            }
+
+            .login #title {
+                background: #9c0000;
+                color: white;
+                font-size: 1.2em;
+                text-align: left;
+                padding-left: 10px;
+                border-radius: 5px 0;
+            }
+
+            .login .close {
+                text-align: right;
+                float: right;
+                margin-top: -24px;
+                color: white;
+                font-size: 1.1em;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body class="login" >
+
+        <header style="display: block">
+            <section>
+                <span id="alert"></span>
+            </section>
+        </header>
+
+        <section id="box">
+            <div id="mask"></div>
+            <div id="body">
+                <div id="title">Título</div>
+                <span class="close"><i class="fa fa-times-circle"></i></span>
+                <span id="message"></span>
+                <div id="content"></div>
+                <button id="button" class=""></button>
+            </div>
+        </section>
+
+        <main>
+            <header class="auth_header">
+                <img src="./assets/img/logo.png" alt="logo D20" height='120px' />
+            </header>
+            <section id="auth_container">
+                <!--Signup Container-->
+                <div id="login_container">
+                    <h2 class="signup_heading" >Entre com seu Login</h2>
+                    <div class="login_or"></div>
+                    <div id="div_error_box_login" ></div>
+                        <form action="#" name='formlogin'
+                            id="signinForm" class="signinForm" method="post" >
+                        <ul>
+                            <li>
+                                <input type="text" name="login" id="uname_log" value=""
+                                    placeholder="Login" class="required requiredField Email fg-input text fg-fw" autofocus autocomplete="off" required />
+                            </li>
+                            <li>
+                                <input type="password" name="password" id="password_log" value=""
+                                    placeholder="Senha" class="required requiredField  fg-input text fg-fw" required />
+                            </li>
+                            <li>
+                                <select name="db" placeholder="Banco de Dados"
+                                    class="fg-input text fg-fw" required>
+                                    <option></option>
+                                </select>
+                            </li>
+                            <li>
+                                <button class="btn btn-info btn-lg mt-3" type='submit' >ENTRAR</button>
+                                <input type="hidden" name="submitted" id="submitted" value="true" />
+                            </li>
+                        </ul>
+                        </form>
+                </div>
+                <div><a id="add" href="#" >Novo Cadastro</a></div>
+                Revisão <span id="version"></span>
+            </section>
+        </main>
+    </body>
+</html>
+<script type="module" src="./index.js" ></script>
