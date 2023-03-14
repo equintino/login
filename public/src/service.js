@@ -27,9 +27,16 @@ export default class Service {
         }
     }
 
-    saveConf(formModal) {
-        console.log(
-            formModal
-        )
+    saveConf(formData) {
+        let confDB = '{'
+
+        formData.forEach((value, name) => {
+            if (name === "connectionName") {
+                confDB += `${value}: {`
+            } else {
+                confDB += `${name}: ${value},`
+            }
+        })
+        confDB += '}}'
     }
 }

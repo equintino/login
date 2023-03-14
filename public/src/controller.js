@@ -7,9 +7,19 @@ export default class Controller {
         this.#service = service
     }
 
+    getForm(form) {
+        console.log(
+            form
+        )
+    }
+
     async init() {
         const optDbs = this.#service.getOptDbs()
         if (!optDbs) {
+            this.#view.openModal(() => {
+                let formData = this.#view.getConfDB()
+                this.#service.saveConf(formData)
+            })
             return console.log(
                 "não temos opções de conexão!"
             )
