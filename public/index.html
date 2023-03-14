@@ -31,12 +31,11 @@
                 width: 57%;
             }
 
-            .login button {
+            .login #btn-enter  {
                 width: 56%;
                 padding: 5px 10px;
                 height: 45px;
                 background: rgb(0, 65, 97);
-                /* background: rgb(58 58 59); */
                 color: white;
                 font-size: .8em;
                 font-weight: bolder;
@@ -44,15 +43,26 @@
                 margin-right: 5px;
             }
 
+            .login #box button {
+                background: rgb(58 58 59);
+                float: right;
+                color: white;
+                cursor: pointer;
+                padding: 5px 20px;
+            }
+
             .login #box {
                 display: none;
                 width: 800px;
-                margin: 60px auto;
+                /* margin: 60px auto; */
+                top: 40px;
+                left: 20%;
                 position: fixed;
                 height: 500px;
                 background: #575757;
                 z-index: 1;
                 border-radius: 5px;
+                flex-direction: column;
             }
 
             .login #title {
@@ -126,7 +136,7 @@
                                 </select>
                             </li>
                             <li>
-                                <button type='submit' >ENTRAR</button>
+                                <button id="btn-enter" type='submit' >ENTRAR</button>
                                 <!-- <input type="hidden" name="submitted" id="submitted" value="true" /> -->
                             </li>
                             <li>

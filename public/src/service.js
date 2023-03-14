@@ -18,7 +18,7 @@ export default class Service {
 
     #setOptDbs() {
         const readFile = new ReadFile()
-        readFile.open("GET", "../config/dbs.ini", false)
+        readFile.open("GET", "../config/dbs.ini_", false)
         if (readFile.status === 200) {
             this.#dbs = readFile.content.split("\n")
         }
